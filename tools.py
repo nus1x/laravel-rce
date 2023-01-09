@@ -26,6 +26,9 @@ def rceScan(url):
 
         if b"tikusgot.org" in r:
             print(f"[+] {url} => {bcolors.OKCYAN}Vuln!{bcolors.ENDC}")
+            s = fopen("results.txt","a")
+            s.write(f"{url}\n")
+            s.close()
         else:
             print(f"[+] {url} => {bcolors.FAIL}Not Vuln!{bcolors.ENDC}")
     except:
